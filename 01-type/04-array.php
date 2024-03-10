@@ -19,7 +19,7 @@
   */
  $numeroNaturales = array(1,2,3,4,5);
 
- var_dump($numeroNaturales);
+ //var_dump($numeroNaturales);
  echo "</br>-------------------------</br>";
  //print_r($numeroNaturales);
 //asignacion de nuevos datos y ver datos especificos de array por 
@@ -38,5 +38,5 @@
  "estado" => false,
  "estatura" => 1.50];
 
- var_dump($datosPersonales);
+ var_dump($datosPersonales["edad"]);
 
