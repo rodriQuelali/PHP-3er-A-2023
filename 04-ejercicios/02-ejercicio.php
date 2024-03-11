@@ -39,3 +39,9 @@ $datos = array(
 
 
 //echo json_encode($datos);
+
+
+//ejercicio3
+//utilizar include y requiere
+//realizar una tabla de multiplicacion.
+//funciones
