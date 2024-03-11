@@ -59,19 +59,6 @@ foreach ($datos as $key => $value) {
         $rest = array_map(fn ($data) => $data*= 2, $value);
     }
 }
-var_dump($rest);
+//var_dump($rest);
 
-//problema: forma un array indexado datos personales de estudiante y 
-//otro array indexado de las nuevas notas mas 20 punto.
-//salida [alan birto, av. siempre triste]
-//salida [22,23,27,54]
 
-//mostra una array asociativa con los nuevos datos
-//utilizando foreach, array_map
-$datos = [
-    "nombre" => "alan brito",
-    "direccion" => "av. siempre viva",
-    "notas" => array(
-        2, 3, 7,34
-        )
-    ];
