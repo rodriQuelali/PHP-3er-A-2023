@@ -40,8 +40,30 @@ $datos = array(
 
 //echo json_encode($datos);
 
+$pers =[];
+$persoT = [];
+$persnotas =[];
+foreach ($datos as $key => $value) {
+    foreach ($value as $key => $valu) {
+        if($key === "notas"){
+            $persnotas = array_map(fn($val) => $val += 20, $valu);
+            $pers["notas"] = $persnotas;
+        }else if($key == "direccion"){
+            $pers["direccion"] = "av. siempre molesto";
+        }else{
+            $pers["nombre"] = "alan brito molesto";
+        }
+    }
+    $persoT [] = $pers;
+    $pers =[];
+    $i = 0;  
+}
+
+echo json_encode(array("datatosFinales"=>$persoT));
 
 //ejercicio3
 //utilizar include y requiere
 //realizar una tabla de multiplicacion.
 //funciones
+
+
