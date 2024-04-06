@@ -1,23 +1,29 @@
 <?php
 
 abstract class Db {
-    private $dsn = 'mysql:host=localhost;dbname=ejemplo';
-    private $usuario = 'root';
-    private $contrasena = '';
-    public $conexion;
+    private static  $dsn = 'mysql:host=localhost;dbname=dbejemplo';
+    private static $usuario = 'root';
+    private static $contrasena = '';
+    public static $conexion;
 
     static function conectar() {
         try {
-            $this->conexion = new PDO($this->dsn, $this->usuario, $this->contrasena);
+            self::$conexion = new PDO(self::$dsn, self::$usuario, self::$contrasena);
 
-            $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMOE_EXCEPTION);
+            self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            return $this->conexion;
+            return self::$conexion;
         } catch  (PDOException $e) {
             echo "error al conectar a la base de datos: " . $e->getMessage();
             return null;
         }
     }
+    static function desconectar() {
+        self::$conexion = null;
+    }
+
+    public function __destruct() {
+        self::desconectar(); 
+    }
 }
 
-echo Db::conectar();
