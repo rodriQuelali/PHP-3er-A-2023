@@ -87,5 +87,34 @@ class Persona{
             return null;
         }
     }
+    public function updatePersona($datos) {
+        try {
+            //listar datos de mi base de datos..... dbejmplo
+            $prepar = $this->db->prepare("UPDATE persona SET nombre = :nombre, telefono = :telefono, direccion = :direccion WHERE idPersona = :id");
+
+            $prepar -> bindParam(':nombre', $datos["nombre"], PDO::PARAM_STR);
+            $prepar -> bindParam(':telefono', $datos["telefono"], PDO::PARAM_INT);
+            $prepar -> bindParam(':direccion', $datos["direccion"], PDO::PARAM_STR);
+            $prepar -> bindParam(':id', $datos["id"], PDO::PARAM_INT);
+
+
+            if($prepar->execute()){
+                return json_encode(
+                    array("estado" => 200, 
+                    "report"=> "ok")
+                );
+            }else{
+                return json_encode(
+                    array("estado" => 400, 
+                    "report"=> "NO se pudo realizar la operacion")
+                );
+            }
+            //unset($prepar);
+
+        } catch(PDOException $e) {
+            echo "error al conectar a la base de datos: ". $e;
+            return null;
+        }
+    }
 
 }
