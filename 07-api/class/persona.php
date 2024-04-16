@@ -1,5 +1,5 @@
 <?php
-require_once "db/db.php";
+require_once "../db/db.php";
 class Persona{
     private $idPersona;
     private $nombre;
@@ -14,7 +14,7 @@ class Persona{
     public function listPersona() {
         try {
             //listar datos de mi base de datos..... dbejmplo
-            $prepar = $this->db->prepare("SELECT * FROM persona");
+            $prepar = $this->db->prepare("SELECT * FROM personas");
 
             $prepar->execute();
 
@@ -37,7 +37,7 @@ class Persona{
     public function guadarPersona($datos) {
         try {
             //listar datos de mi base de datos..... dbejmplo
-            $prepar = $this->db->prepare("INSERT INTO persona (nombre, telefono, direccion) VALUES (:nombre, :telefono, :direccion)");
+            $prepar = $this->db->prepare("INSERT INTO personas (nombre, telefono, direccion) VALUES (:nombre, :telefono, :direccion)");
 
             $prepar -> bindParam(':nombre', $datos["nombre"], PDO::PARAM_STR);
             $prepar -> bindParam(':telefono', $datos["telefono"], PDO::PARAM_INT);
@@ -65,7 +65,7 @@ class Persona{
     public function eliminarPersona($datos) {
         try {
             //listar datos de mi base de datos..... dbejmplo
-            $prepar = $this->db->prepare("DELETE FROM persona WHERE idPersona = :id");
+            $prepar = $this->db->prepare("DELETE FROM personas WHERE idPersona = :id");
 
             $prepar -> bindParam(':id', $datos, PDO::PARAM_INT);
 
@@ -90,7 +90,7 @@ class Persona{
     public function updatePersona($datos) {
         try {
             //listar datos de mi base de datos..... dbejmplo
-            $prepar = $this->db->prepare("UPDATE persona SET nombre = :nombre, telefono = :telefono, direccion = :direccion WHERE idPersona = :id");
+            $prepar = $this->db->prepare("UPDATE personas SET nombre = :nombre, telefono = :telefono, direccion = :direccion WHERE idPersona = :id");
 
             $prepar -> bindParam(':nombre', $datos["nombre"], PDO::PARAM_STR);
             $prepar -> bindParam(':telefono', $datos["telefono"], PDO::PARAM_INT);

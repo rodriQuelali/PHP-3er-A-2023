@@ -1,7 +1,7 @@
 <?php
 
 abstract class Db {
-    private static  $dsn = 'mysql:host=localhost;dbname=dbejemplo';
+    private static  $dsn = 'mysql:host=localhost;dbname=dbpersona';
     private static $usuario = 'root';
     private static $contrasena = '';
     public static $conexion;
