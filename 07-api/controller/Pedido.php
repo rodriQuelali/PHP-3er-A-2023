@@ -1,10 +1,8 @@
 <?php 
-include "../class/persona.php";
+include "../class/ModelProducto.php";
 include "../conf/interfaz.php";
 
-
-
-abstract class PersonaController implements Controller
+final class Pedido implements Controller
 {
     static function guardar(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -45,10 +43,6 @@ abstract class PersonaController implements Controller
     }
 }
 
-/**
- * GET, solo para listar datos.
- * enviar datos por la url.
- */
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $perList = PersonaController::listar();
     echo json_encode($perList);
