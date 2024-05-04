@@ -15,7 +15,7 @@ class Producto{
      public $nombre;
      private $tipo;
      private $marca;
-     private $modelos;
+     private $modelo;
 
     //crear el constructor
     public function __construct($nombre, $tipo, $marca, $modelo) {

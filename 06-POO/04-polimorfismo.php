@@ -6,6 +6,8 @@
 //clase abtracta -- nose puede hacer la instancia con
 //una clase abtracta.
 
+use Producto as GlobalProducto;
+
 abstract class Producto{
 
  public $nombre;
@@ -19,6 +21,7 @@ abstract class Producto{
 
     }
 
+    
     //metodos:
     public function get(){
         return $this->nombre;

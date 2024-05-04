@@ -1,5 +1,5 @@
 <?php
-require_once "../db/db.php";
+require_once "db/db.php";
 class Persona{
     private $idPersona;
     private $nombre;
