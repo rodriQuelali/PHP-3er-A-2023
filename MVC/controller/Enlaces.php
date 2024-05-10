@@ -6,7 +6,7 @@ final class Enlaces
 
         if(isset($_GET["action"])){
             $enal = $_GET["action"];
-            echo $enal;
+            //echo $enal;
         }else{
             $enal = "index";
             
