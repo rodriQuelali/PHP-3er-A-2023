@@ -6,8 +6,8 @@ final class Model_ingreso extends BD
         
     }
     
-    function insertar($registro){}
-    function consulta(){}
-    function actualizar($registro){}
-    function eliminar($accion, $liminar){}
+    static function insertar($registro){}
+    static function consulta(){}
+    static function actualizar($registro){}
+    static function eliminar($accion, $liminar){}
 }

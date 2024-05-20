@@ -2,7 +2,8 @@
 final class Model_enlaces
 {
     static function enlaces_model($enlaces) {
-        if($enlaces == "home" || $enlaces == "producto"){
+        if($enlaces == "home" || $enlaces == "producto"
+        || $enlaces == "clientes"){
 
             $enlaceData =  "view/module/".$enlaces.".php";
 

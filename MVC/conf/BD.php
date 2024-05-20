@@ -12,7 +12,7 @@ abstract class BD{
     private static $db_charset = DB_CHARSET;
     private $conexion;
 
-    public function conectar(){
+    static public function conectar(){
         try {
             
             $dsn = "mysql:host=".self::$db_servidor.";dbname=".self::$db_nombre;
@@ -33,9 +33,9 @@ abstract class BD{
         $this->conexion = null;
     }
 //interfaz
-    abstract protected function insertar($registro);
-    abstract protected function consulta();
-    abstract protected function actualizar($registro);
-    abstract protected function eliminar($accion, $liminar);
+    abstract protected static function insertar($registro);
+    abstract protected static function consulta();
+    abstract protected static function actualizar($registro);
+    abstract protected static function eliminar($accion, $liminar);
 
 }
