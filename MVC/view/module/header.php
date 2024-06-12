@@ -28,7 +28,7 @@
             <li><a class="dropdown-item" href="#">Editar perfil</a></li>
             <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="login">Salir</a></li>
+            <li><a class="dropdown-item" href="salir">Salir</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item">

@@ -1,5 +1,5 @@
 <?php
-require "conf/BD.php";
+require_once "conf/BD.php";
 final class Model_cliente extends BD
 {
     static function insertar($registro){}

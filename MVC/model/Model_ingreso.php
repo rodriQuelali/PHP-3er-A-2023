@@ -1,23 +1,19 @@
 <?php
-require "conf/DB.php";
+require_once "conf/BD.php";
 final class Model_ingreso extends BD
 {
-    function ingresar() {
-        
-    }
-    
-    static function insertar($registro){}
-    static function consulta(){
+    static function ingresar($data) {
+        $conexion = parent::conectar();
         try {
             //listar datos de mi base de datos..... dbejmplo
-            $prepar = BD::conectar()->prepare("SELECT * 
+            $prepar = $conexion->prepare("SELECT * 
             FROM usuario u
             INNER JOIN personas p ON u.idPersona = p.id
-            WHERE correo = ");
+            WHERE correo = :correo");
+            //$prepar->bindParam(':corre',$data["correo"], PDO::PARAM_STR);
+            $prepar->execute($data);
 
-            $prepar->execute();
-
-            return $prepar->fetchAll(PDO::FETCH_ASSOC);
+            return $prepar->fetch(PDO::FETCH_ASSOC);
 
             unset($prepar);
 
@@ -26,6 +22,11 @@ final class Model_ingreso extends BD
             echo "error en lista de datos: ". $e;
             return null;
         }
+    }
+    
+    static function insertar($registro){}
+    static function consulta(){
+        
     }
     static function actualizar($registro){}
     static function eliminar($accion, $liminar){}

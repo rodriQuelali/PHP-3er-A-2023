@@ -1,8 +1,12 @@
 <?php
+
+if($_SESSION['estado'] != true){
+    header('Location: login');
+}
     include "view/module/header.php";
 ?>
 
-<center><h1>Bienbenido al SISTEMA SIQ</h1> </center>
+<center><h1>Bienbenido al SISTEMA SIQ <?php echo  $_SESSION["usuasrio"];?></h1> </center>
 <div class="container">
     <div class="row">
     <div class="col-sm-6 col-md-4 col-lg-3">
